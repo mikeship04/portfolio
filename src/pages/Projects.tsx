@@ -4,19 +4,19 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "A personal portfolio built with React, TypeScript, and Tailwind CSS.",
-    image: "/images/headshot.jpg",
-    link: "https://github.com/yourusername/portfolio",
+    image: "/images/Linkedin Banner1.png",
+    link: "https://github.com/mikeship04/portfolio",
   },
   {
     title: "College Marketplace",
     description: "An applicatoin made during bootcamp to sell items when moving in/out of dorms. Link is to a video walkthrough.",
-    image: "/images/headshot.jpg",
+    image: "/images/lofi-chill-bedroom-wallpaper-2560x1600_7.jpg",
     link: "https://www.loom.com/share/07b8cc35f0454c73b93acf655d809edf",
   },
   {
     title: "LeetCode Solutions",
     description: "A link to solutions for leetcode problems I've completed in various languages.",
-    image: "/images/headshot.jpg",
+    image: "/images/Most water.png",
     link: "https://github.com/mikeship04/LeetCodes",
   },
 ];
