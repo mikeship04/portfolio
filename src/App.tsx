@@ -1,25 +1,16 @@
-// src/App.tsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeContext";
+import AppRoutes from "./AppRoutes";
 
 const App: React.FC = () => {
+  const basename = import.meta.env.PROD ? '/portfolio' : '';
+  
   return (
-    <ThemeProvider>
-      <Router>
-        <Navbar />
-        <div className="p-6 dark:bg-gray-900 dark:text-white">
-          <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
-      </Router>
-    </ThemeProvider>
+    <BrowserRouter basename={basename}>
+      <ThemeProvider>
+        <AppRoutes />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 
