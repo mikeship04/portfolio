@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeContext";
 import AppRoutes from "./AppRoutes";
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const basename = import.meta.env.PROD ? '/portfolio' : '';
@@ -8,7 +9,10 @@ const App: React.FC = () => {
   return (
     <BrowserRouter basename={basename}>
       <ThemeProvider>
-        <AppRoutes />
+        <div className="min-h-screen flex flex-col">
+          <AppRoutes />
+          <Footer />
+        </div>
       </ThemeProvider>
     </BrowserRouter>
   );

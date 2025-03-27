@@ -7,6 +7,7 @@ type ButtonProps = {
   onClick?: () => void;
   className?: string;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({ text, variant, onClick, className = "", type = "button" }) => {

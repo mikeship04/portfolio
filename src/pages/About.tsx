@@ -1,7 +1,14 @@
 import React from "react";
+import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
+import TechStack from "../components/TechStack";
+import ParticleGame from "../components/ParticleGame";
 
-  const About: React.FC = () => {
-    return (
+const About: React.FC = () => {
+  const navigate = useNavigate();
+  
+  return (
+    <>
       <section className="flex flex-col items-center justify-center text-center py-16 px-4 dark:bg-gray-800 transition-colors duration-300">
         <img 
           src={import.meta.env.PROD
@@ -18,15 +25,22 @@ import React from "react";
           React, TypeScript, and Laravel.
         </p>  
         <div className="mt-6">
-          <a 
-            href={import.meta.env.PROD ? "/portfolio/projects" : "/projects"}
-            className="bg-indigo-500 dark:bg-gray-900 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-800 dark:hover:bg-blue-500 transition"
-          >
-            See My Work
-          </a>
+          <Button
+            onClick={() => navigate("/projects")}
+            variant="primary"
+            text="See My Work"
+          />
         </div>
       </section>
-    );
-  };
+      
+      <section className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 py-16">
+        <TechStack />
+        <div className="h-[400px]">
+          <ParticleGame />
+        </div>
+      </section>
+    </>
+  );
+};
 
-  export default About;
+export default About;
